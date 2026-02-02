@@ -47,8 +47,37 @@
     {
       "name": "UserStoryReviewer",
       "request": {
-        "method": "GET",
-        "header": []
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-api-key",
+            "value": "sk-MqtaKt993-gHl38qKy9G97bsIFQTV3_6BwREz4b5sZ4",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"output_type\": \"text\",\r\n    \"input_type\": \"text\",\r\n    \"input_value\": \"Review the USer story and provide the output based on the prompt!\",\r\n    \"tweaks\": {\r\n        \"APIRequest-zA5Kc\": {\r\n            \"body\": [\r\n                {\r\n                    \"key\": \"jql\",\r\n                    \"value\": \"key=SCRUM-3\"\r\n                },\r\n                {\r\n                    \"key\": \"fields\",\r\n                    \"value\": \"[\\n        \\\"key\\\",\\n        \\\"summary\\\",\\n        \\\"description\\\",\\n        \\\"status\\\",\\n        \\\"reporter\\\"\\n       \\n    ]\"\r\n                },\r\n                {\r\n                    \"key\": \"maxResults\",\r\n                    \"value\": \"1\"\r\n                }\r\n            ],\r\n            \"headers\": [\r\n                {\r\n                    \"key\": \"User-Agent\",\r\n                    \"value\": \"Langflow/1.0\"\r\n                },\r\n                {\r\n                    \"key\": \"Authorization\",\r\n                    \"value\": \"Basic bml0aHlhZGV2aWNoYW5kcmFrYW50aEBnbWFpbC5jb206QVRBVFQzeEZmR0YwV2V0d2xBemRTVHdob0JEN1l2dzZfMUIzbUpsUURfTnl1NVpTbmM5Z2dUWkNucl8wdkNkSmVKckVOSDdYbkFWYTJkMWpRNktLajIzYzVCSGNaSTBFODZ1a084eEEtQTdXcUhxNUVBQ015UDVhWlBLLV9qZ0Q3V0U2UjNlcXBCel9lRTE1NVZMVzR4Tng2d0IwOVRZVmNFdHdyVFgxQnNUYjN0VDEtZ2ZvOUpzPUVDQjA3NzhB\"\r\n                }\r\n            ],\r\n            \"method\": \"POST\",\r\n            \"url_input\": \"https://nithyadevichandrakanth-1769852687325.atlassian.net/rest/api/3/search/jql\"\r\n        },\r\n        \"GroqModel-2IOCV\": {\r\n            \"model_name\": \"openai/gpt-oss-120b\",\r\n            \"system_message\": \"Fetch the user story title, description and acceptance criteria only text\",\r\n            \"temperature\": 0.1\r\n        },\r\n        \"Prompt Template-0SLU6\": {\r\n            \"template\": \"Instructions\\n\\nYou are an expert AI assistant specialized in Business Analysis for Healthcare.\\nYour task is to analyze and review the uploaded user story document based on multiple quality dimensions and provide:\\nThe output in a beautified format when we save the file as html after receiving the output in txt format:\\n\\nIndividual parameter scores (each out of 20)\\nOverall quality score (out of 100)\\n\\nSpecific improvement recommendations for each weak parameter\\nEvaluate the user story against the following five parameters:\\nClarity: Is the story easy to understand and unambiguous?\\nCompleteness: Are acceptance criteria and preconditions well-defined?\\nBusiness Value Alignment: Does it reflect tangible healthcare value (e.g., patient safety, compliance, operational efficiency)?\\nTestability: Can QA engineers easily derive test cases from it?\\nTechnical Feasibility: Is it practically implementable within typical healthcare system constraints?\\n\\nFinally, provide an overall rating and improvement summary.\\n\\nContext\\n\\nThe input user story belongs to the Healthcare domain — specifically dealing with hospital systems, patient records, clinical workflows, and compliance (like HIPAA or PoPIA).\\nAssume that this story will be used by a cross-functional team (BA, QA, Developer) in a regulated healthcare project.\\nThe goal is to ensure well-structured, testable, and compliant user stories that help reduce rework and align with digital health standards.\\n[STRICTLY]Give the output in text with beautifications \\n\\nExample\\n\\nExample Input (User Story Summary):\\n\\nAs a doctor, I want to review and approve patient prescriptions digitally before they reach the pharmacy, ensuring safety and compliance.\\n\\nExample Output:\\n\\nParameter\\tDescription\\tScore (out of 20)\\nClarity\\tThe story is straightforward but lacks detailed acceptance criteria.\\t16\\nCompleteness\\tPreconditions not clearly mentioned.\\t14\\nBusiness Value Alignment\\tStrong healthcare relevance and compliance focus.\\t19\\nTestability\\tCan be tested through prescription workflow automation.\\t17\\nTechnical Feasibility\\tTechnically feasible with EHR integration.\\t18\\n\\nOverall Score: 84 / 100\\n\\nImprovement Areas:\\n\\nAdd explicit acceptance criteria for prescription error handling.\\nSpecify validation rules for dosage and duplicate drugs.\\nInclude system actor details for approval workflow.\\n\\nPersona\\n\\nYou are acting as a senior business analyst with 10+ years of experience in healthcare IT systems, specializing in EHR (Electronic Health Records), clinical workflow automation, and regulatory compliance (HIPAA, HL7, PoPIA).\\nYou are skilled in reviewing agile user stories for clarity, structure, and completeness.\\n\\n\\nT – Tone\\n\\nProfessional, analytical, and constructive — similar to a BA review summary for a healthcare project stakeholder meeting.\\nAvoid generic feedback; emphasize actionable, healthcare-specific improvements. \\n\\n\\n{userStory}\"\r\n        }\r\n    }\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:7860/api/v1/run/83a64cb1-c654-420c-9997-d21e29132048",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "7860",
+          "path": [
+            "api",
+            "v1",
+            "run",
+            "83a64cb1-c654-420c-9997-d21e29132048"
+          ]
+        }
       },
       "response": []
     }
